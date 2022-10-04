@@ -1,0 +1,59 @@
+unit untCadContaMensal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TfrmCadContaMensal = class(TForm)
+    panelCabecalho: TPanel;
+    lblCabecalho: TLabel;
+    imgCabecalho: TImage;
+    btnExcluir: TSpeedButton;
+    btnEditar: TSpeedButton;
+    btnSalvar: TSpeedButton;
+    btnNovo: TSpeedButton;
+    edtCodigo: TEdit;
+    btnPesquisar: TSpeedButton;
+    lblDescricao: TLabel;
+    lblCodigo: TLabel;
+    edtDescReceita: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Edit1: TEdit;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    Edit2: TEdit;
+    ComboBox3: TComboBox;
+    Edit3: TEdit;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadContaMensal: TfrmCadContaMensal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmCadContaMensal.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key=(VK_ESCAPE) then
+  begin
+    Close;
+  end;
+end;
+
+end.

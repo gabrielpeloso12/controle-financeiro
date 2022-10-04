@@ -1,0 +1,60 @@
+Telas no Delphi / Tabelas do Banco: 
+
+	- CADASTROS
+Cadastro de Pessoas: 
+	CODIGO - INTEGER - NOT NULL - AUTO INCREMENT
+	NOME - VARCHAR(50)
+	IDADE - INTEGER
+	CONTATO - INTEGER
+	E-MAIL - VARCHAR(40)
+	CPF/CNPJ - INTEGER
+	SEXO - VARCHAR(10)
+	FUNÇÃO - VARCHAR(15)
+	ENDERECO - VARCHAR (50)
+	BAIRRO - VARCHAR (30)
+	NUMERO - INTEGER
+
+Cadastro de Função:
+	CODIGO
+	FUNÇÃO
+	
+Cadastro de Usuário:
+	CODIGO
+	PESSOA
+	NOME USUARIO
+	SENHA
+
+Cadastro de Receita Mensal:
+	CODIGO
+	NOME DA RECEITA 
+	VALOR
+	CLT OU PJ
+	EMPRESA
+
+Cadastro de Finalizador:
+	CODIGO
+	DESCRIÇÃO DO FINALIZADOR
+
+Cadastro de Contas Mensais:
+	CODIGO
+	DESCRICÃO DA CONTA
+	VALOR DA CONTA
+	FINALIZADOR
+	PARCELADA (S/N)
+	Nº DA PARCELA
+	MÊS DA PARCELA
+	PAGO (S/N)
+
+
+	- RELATÓRIOS
+Relatório de Usuários:
+
+
+Relatório de Receitas:
+
+
+Relatório de finalizadores:
+
+
+Relatórios de Contas Cadastradas:
+	

@@ -1,0 +1,28 @@
+unit untRelPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons;
+
+type
+  TfrmRelPrincipal = class(TForm)
+    btnCadContasMensais: TSpeedButton;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRelPrincipal: TfrmRelPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.
