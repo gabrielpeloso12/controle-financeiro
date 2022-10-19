@@ -557,7 +557,6 @@ object frmLogin: TfrmLogin
     Align = alLeft
     ParentBackground = False
     TabOrder = 0
-    ExplicitHeight = 443
     object imgLogo: TImage
       Left = 93
       Top = 108
@@ -1326,8 +1325,6 @@ object frmLogin: TfrmLogin
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 392
-    ExplicitHeight = 443
     DesignSize = (
       425
       472)

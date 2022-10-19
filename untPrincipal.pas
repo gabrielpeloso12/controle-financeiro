@@ -57,7 +57,7 @@ implementation
 
 {$R *.dfm}
 
-uses untCadPrincipal, untDM, untRelPrincipal, untTelaLogin, untCadContaMensal,
+uses untCadPrincipal,untRelPrincipal, untTelaLogin, untCadContaMensal,
   untCadFinalizador, untCadFuncao, untCadPessoa, untCadReceitaMensal,
   untCadUsuario, untRelContaPagar, untRelFinalizador, untRelReceita,
   untRelUsuario;

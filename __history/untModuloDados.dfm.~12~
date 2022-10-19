@@ -1,0 +1,81 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 644
+  Width = 881
+  object ConexaoMySql: TFDConnection
+    Params.Strings = (
+      'Database=financeiro'
+      'User_Name=gabriel'
+      'Password=140595@Ga'
+      'DriverID=MySQL')
+    Connected = True
+    Left = 32
+    Top = 24
+  end
+  object DriverMySql: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'C:\projetos-programacao\controle-financeiro\Win32\lib\libmysql.d' +
+      'll'
+    Left = 112
+    Top = 24
+  end
+  object CursorMySql: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 184
+    Top = 24
+  end
+  object tbCargo: TFDTable
+    Active = True
+    IndexFieldNames = 'C_CODIGO'
+    Connection = ConexaoMySql
+    TableName = 'financeiro.cargo'
+    Left = 32
+    Top = 128
+    object tbCargoC_CODIGO: TFDAutoIncField
+      FieldName = 'C_CODIGO'
+      Origin = 'C_CODIGO'
+      ReadOnly = True
+    end
+    object tbCargoC_DESCRICAO: TStringField
+      FieldName = 'C_DESCRICAO'
+      Origin = 'C_DESCRICAO'
+      Required = True
+      Size = 30
+    end
+    object tbCargoC_DATACAD: TDateField
+      FieldName = 'C_DATACAD'
+      Origin = 'C_DATACAD'
+      Required = True
+    end
+  end
+  object dstbCargo: TDataSource
+    DataSet = tbCargo
+    Left = 32
+    Top = 200
+  end
+  object queryCargo: TFDQuery
+    Active = True
+    Connection = ConexaoMySql
+    SQL.Strings = (
+      'SELECT * FROM CARGO')
+    Left = 32
+    Top = 336
+    object queryCargoC_CODIGO: TFDAutoIncField
+      FieldName = 'C_CODIGO'
+    end
+    object queryCargoC_DESCRICAO: TStringField
+      FieldName = 'C_DESCRICAO'
+      Required = True
+      Size = 30
+    end
+    object queryCargoC_DATACAD: TDateField
+      FieldName = 'C_DATACAD'
+      Required = True
+    end
+  end
+  object dsqueryCargo: TDataSource
+    DataSet = queryCargo
+    Left = 32
+    Top = 424
+  end
+end

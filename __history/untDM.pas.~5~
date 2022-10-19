@@ -1,0 +1,52 @@
+unit untDM;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.IBBase,
+  Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Phys.MySQL,
+  FireDAC.Phys.MySQLDef;
+
+  type
+  TfrmDM = class(TDataModule)
+    BDFINANCEIRO: TFDConnection;
+    DRIVERBD: TFDPhysFBDriverLink;
+    CURSORBD: TFDGUIxWaitCursor;
+    tbFuncao: TFDTable;
+    tbFuncaoF_CODIGO: TIntegerField;
+    tbFuncaoF_FUNCAO: TStringField;
+    tbFuncaoF_DATA: TDateField;
+    queryFuncao: TFDQuery;
+    dsFuncao: TDataSource;
+    queryFuncaoF_CODIGO: TIntegerField;
+    queryFuncaoF_FUNCAO: TStringField;
+    queryFuncaoF_DATA: TDateField;
+
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+
+  end;
+
+  var
+  frmDM: TfrmDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TfrmDM }
+
+
+{ TfrmDM }
+
+
+end.

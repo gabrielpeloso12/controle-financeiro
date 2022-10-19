@@ -111,11 +111,6 @@
             <Form>frmTelaMenu</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="untDM.pas">
-            <Form>frmDM</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="cadastro\untCadPrincipal.pas">
             <Form>frmCadPrincipal</Form>
             <FormType>dfm</FormType>
@@ -162,6 +157,19 @@
         </DCCReference>
         <DCCReference Include="cadastro\untCadFuncao.pas">
             <Form>frmCadFuncao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="consultas\untConsultaFuncao.pas">
+            <Form>frmConsultaFuncao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="untModuloDados.pas">
+            <Form>DM</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="consultas\untConsultaPessoa.pas">
+            <Form>frmConsultaPessoa</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
