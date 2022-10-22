@@ -18,7 +18,9 @@ uses
   untCadFuncao in 'cadastro\untCadFuncao.pas' {frmCadFuncao},
   untConsultaFuncao in 'consultas\untConsultaFuncao.pas' {frmConsultaFuncao},
   untModuloDados in 'untModuloDados.pas' {DM: TDataModule},
-  untConsultaPessoa in 'consultas\untConsultaPessoa.pas' {frmConsultaPessoa};
+  untConsultaPessoa in 'consultas\untConsultaPessoa.pas' {frmConsultaPessoa},
+  untConsultaFinalizador in 'consultas\untConsultaFinalizador.pas' {frmConsultaFinalizador},
+  untConsultaUsuario in 'consultas\untConsultaUsuario.pas' {frmConsultaUsuario};
 
 {$R *.res}
 
@@ -42,5 +44,7 @@ begin
   Application.CreateForm(TfrmConsultaFuncao, frmConsultaFuncao);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TfrmConsultaPessoa, frmConsultaPessoa);
+  Application.CreateForm(TfrmConsultaFinalizador, frmConsultaFinalizador);
+  Application.CreateForm(TfrmConsultaUsuario, frmConsultaUsuario);
   Application.Run;
 end.

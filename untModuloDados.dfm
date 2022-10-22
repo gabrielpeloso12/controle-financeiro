@@ -277,4 +277,158 @@ object DM: TDM
     Left = 120
     Top = 426
   end
+  object tbUsuario: TFDTable
+    Active = True
+    IndexFieldNames = 'U_CODIGO'
+    Connection = ConexaoMySql
+    TableName = 'financeiro.usuario'
+    Left = 187
+    Top = 128
+    object tbUsuarioU_CODIGO: TFDAutoIncField
+      FieldName = 'U_CODIGO'
+      Origin = 'U_CODIGO'
+      ReadOnly = True
+    end
+    object tbUsuarioU_PESSOA: TStringField
+      FieldName = 'U_PESSOA'
+      Origin = 'U_PESSOA'
+      Required = True
+      Size = 50
+    end
+    object tbUsuarioU_NOMEUSUARIO: TStringField
+      FieldName = 'U_NOMEUSUARIO'
+      Origin = 'U_NOMEUSUARIO'
+      Required = True
+      Size = 50
+    end
+    object tbUsuarioU_SENHA: TStringField
+      FieldName = 'U_SENHA'
+      Origin = 'U_SENHA'
+      Required = True
+      Size = 10
+    end
+    object tbUsuarioU_DATACAD: TDateField
+      FieldName = 'U_DATACAD'
+      Origin = 'U_DATACAD'
+      Required = True
+    end
+  end
+  object tbFinalizador: TFDTable
+    Active = True
+    IndexFieldNames = 'F_CODIGO'
+    Connection = ConexaoMySql
+    TableName = 'financeiro.finalizador'
+    Left = 280
+    Top = 128
+    object tbFinalizadorF_CODIGO: TFDAutoIncField
+      FieldName = 'F_CODIGO'
+      Origin = 'F_CODIGO'
+      ReadOnly = True
+    end
+    object tbFinalizadorF_DESCRICAO: TStringField
+      FieldName = 'F_DESCRICAO'
+      Origin = 'F_DESCRICAO'
+      Required = True
+    end
+    object tbFinalizadorF_DATACAD: TDateField
+      FieldName = 'F_DATACAD'
+      Origin = 'F_DATACAD'
+      Required = True
+    end
+  end
+  object dstbUsuario: TDataSource
+    DataSet = tbUsuario
+    Left = 184
+    Top = 200
+  end
+  object dstbFinalizador: TDataSource
+    DataSet = tbFinalizador
+    Left = 280
+    Top = 200
+  end
+  object queryUsuario: TFDQuery
+    Active = True
+    Connection = ConexaoMySql
+    SQL.Strings = (
+      'SELECT * FROM USUARIO')
+    Left = 208
+    Top = 337
+    object queryUsuarioU_CODIGO: TFDAutoIncField
+      DisplayLabel = 'C'#243'digo'
+      DisplayWidth = 5
+      FieldName = 'U_CODIGO'
+      Origin = 'U_CODIGO'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object queryUsuarioU_PESSOA: TStringField
+      DisplayLabel = 'Nome Pessoa'
+      DisplayWidth = 35
+      FieldName = 'U_PESSOA'
+      Origin = 'U_PESSOA'
+      Required = True
+      Size = 50
+    end
+    object queryUsuarioU_NOMEUSUARIO: TStringField
+      DisplayLabel = 'Nome Usu'#225'rio'
+      DisplayWidth = 25
+      FieldName = 'U_NOMEUSUARIO'
+      Origin = 'U_NOMEUSUARIO'
+      Required = True
+      Size = 50
+    end
+    object queryUsuarioU_SENHA: TStringField
+      FieldName = 'U_SENHA'
+      Origin = 'U_SENHA'
+      Required = True
+      Visible = False
+      Size = 10
+    end
+    object queryUsuarioU_DATACAD: TDateField
+      DisplayLabel = 'Data Cadastro'
+      FieldName = 'U_DATACAD'
+      Origin = 'U_DATACAD'
+      Required = True
+    end
+  end
+  object queryFinalizador: TFDQuery
+    Active = True
+    Connection = ConexaoMySql
+    SQL.Strings = (
+      'SELECT * FROM FINALIZADOR')
+    Left = 309
+    Top = 337
+    object queryFinalizadorF_CODIGO: TFDAutoIncField
+      DisplayLabel = 'C'#243'digo'
+      DisplayWidth = 5
+      FieldName = 'F_CODIGO'
+      Origin = 'F_CODIGO'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object queryFinalizadorF_DESCRICAO: TStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      DisplayWidth = 40
+      FieldName = 'F_DESCRICAO'
+      Origin = 'F_DESCRICAO'
+      Required = True
+    end
+    object queryFinalizadorF_DATACAD: TDateField
+      DisplayLabel = 'Data Cadastro'
+      DisplayWidth = 20
+      FieldName = 'F_DATACAD'
+      Origin = 'F_DATACAD'
+      Required = True
+    end
+  end
+  object dsqueryUsuario: TDataSource
+    DataSet = queryUsuario
+    Left = 206
+    Top = 426
+  end
+  object dsqueryFinalizador: TDataSource
+    DataSet = queryFinalizador
+    Left = 310
+    Top = 426
+  end
 end

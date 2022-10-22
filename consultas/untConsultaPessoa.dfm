@@ -5,7 +5,7 @@ object frmConsultaPessoa: TfrmConsultaPessoa
   BorderStyle = bsToolWindow
   Caption = 'Consulta Pessoas'
   ClientHeight = 443
-  ClientWidth = 566
+  ClientWidth = 569
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -551,13 +551,14 @@ object frmConsultaPessoa: TfrmConsultaPessoa
   object panelCabecalho: TPanel
     Left = 0
     Top = 0
-    Width = 566
+    Width = 569
     Height = 81
     Align = alTop
     Color = cl3DLight
     Enabled = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 566
     object lblCabecalho: TLabel
       Left = 125
       Top = 20
@@ -665,7 +666,7 @@ object frmConsultaPessoa: TfrmConsultaPessoa
   object dbPessoa: TDBGrid
     Left = 0
     Top = 81
-    Width = 566
+    Width = 569
     Height = 362
     Align = alClient
     DataSource = DM.dsqueryPessoa

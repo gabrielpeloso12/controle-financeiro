@@ -3,7 +3,7 @@ object frmLogin: TfrmLogin
   Top = 0
   BorderIcons = []
   BorderStyle = bsNone
-  Caption = 'Login'
+  Caption = 'd'
   ClientHeight = 472
   ClientWidth = 823
   Color = clBtnFace
@@ -1385,7 +1385,7 @@ object frmLogin: TfrmLogin
     end
     object edtUsuario: TEdit
       Left = 66
-      Top = 211
+      Top = 210
       Width = 263
       Height = 21
       CharCase = ecUpperCase
