@@ -4,7 +4,6 @@ uses
   Vcl.Forms,
   untTelaLogin in 'untTelaLogin.pas' {frmLogin},
   untPrincipal in 'untPrincipal.pas' {frmTelaMenu},
-  untDM in 'untDM.pas' {frmDM: TDataModule},
   untCadPrincipal in 'cadastro\untCadPrincipal.pas' {frmCadPrincipal},
   untRelPrincipal in 'relatorio\untRelPrincipal.pas' {frmRelPrincipal},
   untCadPessoa in 'cadastro\untCadPessoa.pas' {frmCadPessoa},
@@ -16,7 +15,12 @@ uses
   untRelReceita in 'relatorio\untRelReceita.pas' {Form3},
   untRelContaPagar in 'relatorio\untRelContaPagar.pas' {Form4},
   untCadContaMensal in 'cadastro\untCadContaMensal.pas' {frmCadContaMensal},
-  untCadFuncao in 'cadastro\untCadFuncao.pas' {frmCadFuncao};
+  untCadFuncao in 'cadastro\untCadFuncao.pas' {frmCadFuncao},
+  untConsultaFuncao in 'consultas\untConsultaFuncao.pas' {frmConsultaFuncao},
+  untModuloDados in 'untModuloDados.pas' {DM: TDataModule},
+  untConsultaPessoa in 'consultas\untConsultaPessoa.pas' {frmConsultaPessoa},
+  untConsultaFinalizador in 'consultas\untConsultaFinalizador.pas' {frmConsultaFinalizador},
+  untConsultaUsuario in 'consultas\untConsultaUsuario.pas' {frmConsultaUsuario};
 
 {$R *.res}
 
@@ -25,7 +29,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmLogin, frmLogin);
   Application.CreateForm(TfrmTelaMenu, frmTelaMenu);
-  Application.CreateForm(TfrmDM, frmDM);
   Application.CreateForm(TfrmCadPrincipal, frmCadPrincipal);
   Application.CreateForm(TfrmRelPrincipal, frmRelPrincipal);
   Application.CreateForm(TfrmCadPessoa, frmCadPessoa);
@@ -38,5 +41,10 @@ begin
   Application.CreateForm(TForm4, Form4);
   Application.CreateForm(TfrmCadContaMensal, frmCadContaMensal);
   Application.CreateForm(TfrmCadFuncao, frmCadFuncao);
+  Application.CreateForm(TfrmConsultaFuncao, frmConsultaFuncao);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TfrmConsultaPessoa, frmConsultaPessoa);
+  Application.CreateForm(TfrmConsultaFinalizador, frmConsultaFinalizador);
+  Application.CreateForm(TfrmConsultaUsuario, frmConsultaUsuario);
   Application.Run;
 end.

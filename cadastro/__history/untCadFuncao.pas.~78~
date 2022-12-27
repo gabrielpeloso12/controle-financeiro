@@ -1,0 +1,169 @@
+unit untCadFuncao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+
+type
+  TfrmCadFuncao = class(TForm)
+    btnNovo: TSpeedButton;
+    btnSalvar: TSpeedButton;
+    btnEditar: TSpeedButton;
+    btnExcluir: TSpeedButton;
+    edtCodigo: TEdit;
+    lblCodigo: TLabel;
+    lblDescFuncao: TLabel;
+    edtDescFuncao: TEdit;
+    btnPesquisar: TSpeedButton;
+    panelCabecalho: TPanel;
+    lblCabecalho: TLabel;
+    imgCabecalho: TImage;
+    imgClient: TImage;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure btnSalvarClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+
+  private
+    { Private declarations }
+    procedure associarCampos;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadFuncao: TfrmCadFuncao;
+  ultimoId : integer ;
+
+implementation
+
+{$R *.dfm}
+
+uses untModuloDados, untConsultaFuncao;
+
+
+procedure TfrmCadFuncao.associarCampos;
+begin
+  DM.tbCargo.FieldByName('C_DESCRICAO').Value := edtDescFuncao.Text;
+end;
+
+
+procedure TfrmCadFuncao.btnEditarClick(Sender: TObject);
+begin
+  DM.tbCargo.Edit;
+  if not (edtDescFuncao.Text = '') then
+  begin
+    //ASSOCIA OS CAMPOS DOS EDIT PARA OS CAMPOS DAS TABELAS
+    DM.tbCargo.FieldByName('C_DESCRICAO').Value := edtDescFuncao.Text;
+    //ATUALIZA O REGISTRO NA TABELA CARGO
+    DM.queryCargo.Close;
+    DM.queryCargo.SQL.Clear;
+    DM.queryCargo.SQL.Add('UPDATE CARGO SET C_DESCRICAO = :C_DESCRICAO, C_DATACAD = CURDATE() WHERE C_CODIGO = :C_CODIGO');
+    DM.queryCargo.ParamByName('C_DESCRICAO').Value := edtDescFuncao.Text;
+    DM.queryCargo.ParamByName('C_CODIGO').Value := edtCodigo.Text;
+    DM.queryCargo.ExecSQL;
+    MessageDlg('Alterado com sucesso', mtInformation, [mbOK], 0);
+    edtDescFuncao.Text := '';
+    btnEditar.Enabled := False;
+    btnExcluir.Enabled := False;
+    btnNovo.Enabled := True;
+  end
+  else
+  begin
+    MessageDlg('Selecione um registro a ser alterado', mtInformation, mbOkCancel, 0);
+    edtDescFuncao.SetFocus;
+  end;
+end;
+
+procedure TfrmCadFuncao.btnExcluirClick(Sender: TObject);
+begin
+  if MessageDlg('Deseja deletar o registro ?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    if not (edtCodigo.Text = '') then
+    begin
+      DM.tbCargo.Delete;
+      MessageDlg('Cargo deletado com sucesso', mtInformation, [mbOK], 0);
+      edtDescFuncao.Text := '';
+      edtDescFuncao.Enabled := False;
+      btnExcluir.Enabled := False;
+      btnEditar.Enabled := False;
+      btnNovo.Enabled := True;
+    end
+    else
+    begin
+      MessageDlg('Selecione um cargo a ser deletado', mtInformation, [mbOK], 0);
+    end;
+  end;
+end;
+
+
+procedure TfrmCadFuncao.btnNovoClick(Sender: TObject);
+begin
+  edtDescFuncao.Enabled := True;
+  edtDescFuncao.SetFocus;
+  btnSalvar.Enabled := True;
+end;
+
+procedure TfrmCadFuncao.btnPesquisarClick(Sender: TObject);
+begin
+  edtCodigo.Text := '';
+  frmConsultaFuncao := TfrmConsultaFuncao.Create(Self);
+  frmConsultaFuncao.Show;
+end;
+
+procedure TfrmCadFuncao.btnSalvarClick(Sender: TObject);
+begin
+  if (edtDescFuncao.Text <> '')  then
+  begin
+    DM.tbCargo.Insert;
+    associarCampos;
+    DM.tbCargo.FieldByName('C_DATACAD').Value := Date;
+    DM.tbCargo.Post;
+    MessageDlg ('Salvo com sucesso', mtInformation, [MBOk], 0);
+    edtDescFuncao.Text := '';
+    edtDescFuncao.Enabled := False;
+    btnSalvar.Enabled := False;
+  end
+  else
+  begin
+    MessageDlg ('Preencha os campos', mtInformation, [MBOk], 0);
+    edtCodigo.SetFocus;
+  end;
+
+  DM.queryCargo.Close;
+  DM.queryCargo.SQL.Clear;
+  DM.queryCargo.SQL.Add('SELECT * FROM CARGO ORDER BY C_CODIGO DESC');
+  DM.queryCargo.Open;
+  ultimoId := DM.queryCargo['C_CODIGO'];
+  edtCodigo.Text := ultimoId.ToString;
+
+end;
+
+
+procedure TfrmCadFuncao.FormActivate(Sender: TObject);
+begin
+  {DM.queryCargo.Close;
+  DM.queryCargo.SQL.Clear;
+  DM.queryCargo.SQL.Add('SELECT * FROM CARGO ORDER BY C_CODIGO DESC');
+  DM.queryCargo.Open;
+  ultimoId := DM.queryCargo['C_CODIGO'];
+  edtCodigo.Text := ultimoId.ToString; }
+end;
+
+procedure TfrmCadFuncao.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=(VK_ESCAPE) then
+  begin
+    Close;
+  end;
+end;
+
+end.

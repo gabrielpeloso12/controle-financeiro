@@ -1,0 +1,40 @@
+unit untConsultaFinalizador;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TfrmConsultaFinalizador = class(TForm)
+    panelCabecalho: TPanel;
+    lblCabecalho: TLabel;
+    imgCabecalho: TImage;
+    dbFinalizador: TDBGrid;
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmConsultaFinalizador: TfrmConsultaFinalizador;
+
+implementation
+
+{$R *.dfm}
+
+uses untModuloDados, untCadFinalizador;
+
+procedure TfrmConsultaFinalizador.FormActivate(Sender: TObject);
+begin
+  DM.queryFinalizador.Close;
+  DM.queryFinalizador.SQL.Clear;
+  DM.queryFinalizador.SQL.Add('SELECT * FROM FINALIZADOR ORDER BY F_CODIGO ASC');
+  DM.queryFinalizador.Open;
+end;
+
+end.

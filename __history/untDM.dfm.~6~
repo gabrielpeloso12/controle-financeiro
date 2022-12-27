@@ -1,0 +1,77 @@
+object frmDM: TfrmDM
+  OldCreateOrder = False
+  Height = 794
+  Width = 1015
+  object BDFINANCEIRO: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\projetos-programacao\controle-financeiro\BancoDados\' +
+        'FINANCA.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'Port=3050'
+      'Server=127.0.0.1'
+      'DriverID=FB')
+    Left = 56
+    Top = 32
+  end
+  object DRIVERBD: TFDPhysFBDriverLink
+    VendorLib = 'C:\Program Files (x86)\Firebird\Firebird_3_0\fbclient.dll'
+    Left = 160
+    Top = 32
+  end
+  object CURSORBD: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 240
+    Top = 32
+  end
+  object tbFuncao: TFDTable
+    IndexFieldNames = 'F_CODIGO'
+    Connection = BDFINANCEIRO
+    TableName = 'FUNCAO'
+    Left = 48
+    Top = 128
+    object tbFuncaoF_CODIGO: TIntegerField
+      FieldName = 'F_CODIGO'
+      Origin = 'F_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object tbFuncaoF_FUNCAO: TStringField
+      FieldName = 'F_FUNCAO'
+      Origin = 'F_FUNCAO'
+      Size = 10
+    end
+    object tbFuncaoF_DATA: TDateField
+      FieldName = 'F_DATA'
+      Origin = 'F_DATA'
+    end
+  end
+  object queryFuncao: TFDQuery
+    Connection = BDFINANCEIRO
+    SQL.Strings = (
+      'SELECT * FROM FUNCAO')
+    Left = 48
+    Top = 256
+    object queryFuncaoF_CODIGO: TIntegerField
+      FieldName = 'Codigo'
+      Origin = 'F_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object queryFuncaoF_FUNCAO: TStringField
+      FieldName = 'Cargo'
+      Origin = 'F_FUNCAO'
+      Size = 10
+    end
+    object queryFuncaoF_DATA: TDateField
+      FieldName = 'Data Cadastro'
+      Origin = 'F_DATA'
+    end
+  end
+  object dsFuncao: TDataSource
+    DataSet = queryFuncao
+    Left = 48
+    Top = 192
+  end
+end
