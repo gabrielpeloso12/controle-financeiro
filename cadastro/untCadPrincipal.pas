@@ -43,7 +43,7 @@ implementation
 {$R *.dfm}
 
 uses untCadFinalizador, untCadPessoa, untCadReceitaMensal,
-  untCadUsuario, untCadContaMensal, untCadFuncao;
+  untCadUsuario, untDM, untCadContaMensal, untCadFuncao;
 
 
 procedure TfrmCadPrincipal.btnCadContasMensaisClick(Sender: TObject);

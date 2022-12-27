@@ -3,7 +3,7 @@ object frmLogin: TfrmLogin
   Top = 0
   BorderIcons = []
   BorderStyle = bsNone
-  Caption = 'd'
+  Caption = 'Login'
   ClientHeight = 472
   ClientWidth = 823
   Color = clBtnFace
@@ -557,6 +557,7 @@ object frmLogin: TfrmLogin
     Align = alLeft
     ParentBackground = False
     TabOrder = 0
+    ExplicitHeight = 443
     object imgLogo: TImage
       Left = 93
       Top = 108
@@ -1325,6 +1326,8 @@ object frmLogin: TfrmLogin
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
+    ExplicitLeft = 392
+    ExplicitHeight = 443
     DesignSize = (
       425
       472)
@@ -1385,7 +1388,7 @@ object frmLogin: TfrmLogin
     end
     object edtUsuario: TEdit
       Left = 66
-      Top = 210
+      Top = 211
       Width = 263
       Height = 21
       CharCase = ecUpperCase

@@ -546,7 +546,6 @@ object frmCadFuncao: TfrmCadFuncao
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
-  OnActivate = FormActivate
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
@@ -961,7 +960,6 @@ object frmCadFuncao: TfrmCadFuncao
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnNovoClick
   end
   object btnSalvar: TSpeedButton
     Left = 149
@@ -969,7 +967,6 @@ object frmCadFuncao: TfrmCadFuncao
     Width = 100
     Height = 90
     Caption = 'Salvar'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -1364,7 +1361,6 @@ object frmCadFuncao: TfrmCadFuncao
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnSalvarClick
   end
   object btnEditar: TSpeedButton
     Left = 255
@@ -1372,7 +1368,6 @@ object frmCadFuncao: TfrmCadFuncao
     Width = 100
     Height = 90
     Caption = 'Editar'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -1767,7 +1762,6 @@ object frmCadFuncao: TfrmCadFuncao
       7E5FB9A691DDD3C9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnEditarClick
   end
   object btnExcluir: TSpeedButton
     Left = 361
@@ -1775,7 +1769,6 @@ object frmCadFuncao: TfrmCadFuncao
     Width = 100
     Height = 90
     Caption = 'Excluir'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -2170,7 +2163,6 @@ object frmCadFuncao: TfrmCadFuncao
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnExcluirClick
   end
   object lblCodigo: TLabel
     Left = 34
@@ -2268,14 +2260,12 @@ object frmCadFuncao: TfrmCadFuncao
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphRight
     ParentFont = False
-    OnClick = btnPesquisarClick
   end
   object edtCodigo: TEdit
     Left = 145
     Top = 114
     Width = 104
     Height = 21
-    Enabled = False
     TabOrder = 1
   end
   object edtDescFuncao: TEdit
@@ -2283,8 +2273,6 @@ object frmCadFuncao: TfrmCadFuncao
     Top = 162
     Width = 232
     Height = 21
-    CharCase = ecUpperCase
-    Enabled = False
     TabOrder = 0
   end
   object panelCabecalho: TPanel
@@ -2294,7 +2282,6 @@ object frmCadFuncao: TfrmCadFuncao
     Height = 81
     Align = alTop
     Color = cl3DLight
-    Enabled = False
     ParentBackground = False
     TabOrder = 2
     object lblCabecalho: TLabel

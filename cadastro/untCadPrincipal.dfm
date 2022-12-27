@@ -1765,8 +1765,8 @@ object frmCadPrincipal: TfrmCadPrincipal
     OnClick = btnCadContasMensaisClick
   end
   object btnCadRecMensais: TSpeedButton
-    Left = 16
-    Top = 239
+    Left = 161
+    Top = 128
     Width = 130
     Height = 100
     Caption = 'Receitas Mensais'
@@ -2167,8 +2167,8 @@ object frmCadPrincipal: TfrmCadPrincipal
     OnClick = btnCadRecMensaisClick
   end
   object btnCadFinalizadores: TSpeedButton
-    Left = 161
-    Top = 128
+    Left = 16
+    Top = 239
     Width = 130
     Height = 100
     Caption = 'Finalizadores'

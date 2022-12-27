@@ -4,7 +4,7 @@ object frmCadUsuario: TfrmCadUsuario
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsToolWindow
   Caption = 'Cadastros Usu'#225'rios'
-  ClientHeight = 428
+  ClientHeight = 403
   ClientWidth = 494
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -547,18 +547,18 @@ object frmCadUsuario: TfrmCadUsuario
   OldCreateOrder = False
   Position = poScreenCenter
   OnKeyDown = FormKeyDown
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object imgClient: TImage
     Left = 0
     Top = 81
     Width = 494
-    Height = 347
+    Height = 322
     Align = alClient
     ExplicitLeft = -12
+    ExplicitTop = 73
     ExplicitWidth = 506
-    ExplicitHeight = 274
+    ExplicitHeight = 282
   end
   object lblPessoa: TLabel
     Left = 34
@@ -575,7 +575,7 @@ object frmCadUsuario: TfrmCadUsuario
   end
   object btnNovo: TSpeedButton
     Left = 34
-    Top = 306
+    Top = 275
     Width = 100
     Height = 90
     Caption = 'Novo'
@@ -973,15 +973,13 @@ object frmCadUsuario: TfrmCadUsuario
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnNovoClick
   end
   object btnSalvar: TSpeedButton
     Left = 140
-    Top = 306
+    Top = 275
     Width = 100
     Height = 90
     Caption = 'Salvar'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -1376,15 +1374,13 @@ object frmCadUsuario: TfrmCadUsuario
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnSalvarClick
   end
   object btnEditar: TSpeedButton
     Left = 246
-    Top = 306
+    Top = 275
     Width = 100
     Height = 90
     Caption = 'Editar'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -1779,15 +1775,13 @@ object frmCadUsuario: TfrmCadUsuario
       7E5FB9A691DDD3C9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnEditarClick
   end
   object btnExcluir: TSpeedButton
     Left = 352
-    Top = 306
+    Top = 275
     Width = 100
     Height = 90
     Caption = 'Excluir'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -2182,7 +2176,6 @@ object frmCadUsuario: TfrmCadUsuario
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnExcluirClick
   end
   object lblCodigo: TLabel
     Left = 34
@@ -2280,35 +2273,19 @@ object frmCadUsuario: TfrmCadUsuario
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphRight
     ParentFont = False
-    OnClick = btnPesquisarClick
-  end
-  object lblSenha: TLabel
-    Left = 34
-    Top = 258
-    Width = 53
-    Height = 18
-    Caption = 'Senha:'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Bookman Old Style'
-    Font.Style = [fsBold]
-    ParentFont = False
   end
   object edtCodigo: TEdit
     Left = 145
     Top = 114
     Width = 104
     Height = 21
-    Enabled = False
-    TabOrder = 3
+    TabOrder = 2
   end
-  object edtNomeUsuario: TEdit
+  object edtDescFuncao: TEdit
     Left = 145
     Top = 210
     Width = 232
     Height = 21
-    CharCase = ecUpperCase
     TabOrder = 1
   end
   object panelCabecalho: TPanel
@@ -2318,9 +2295,8 @@ object frmCadUsuario: TfrmCadUsuario
     Height = 81
     Align = alTop
     Color = cl3DLight
-    Enabled = False
     ParentBackground = False
-    TabOrder = 4
+    TabOrder = 3
     object lblCabecalho: TLabel
       Left = 115
       Top = 15
@@ -2471,15 +2447,6 @@ object frmCadUsuario: TfrmCadUsuario
     Top = 161
     Width = 232
     Height = 21
-    CharCase = ecUpperCase
     TabOrder = 0
-  end
-  object edtSenha: TEdit
-    Left = 145
-    Top = 258
-    Width = 232
-    Height = 21
-    PasswordChar = '*'
-    TabOrder = 2
   end
 end

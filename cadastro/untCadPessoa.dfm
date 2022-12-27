@@ -548,7 +548,6 @@ object frmCadPessoa: TfrmCadPessoa
   Position = poScreenCenter
   ShowHint = True
   OnKeyDown = FormKeyDown
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object imgClient: TImage
@@ -1104,7 +1103,6 @@ object frmCadPessoa: TfrmCadPessoa
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnNovoClick
   end
   object btnSalvar: TSpeedButton
     Left = 197
@@ -1112,7 +1110,6 @@ object frmCadPessoa: TfrmCadPessoa
     Width = 100
     Height = 90
     Caption = 'Salvar'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -1507,7 +1504,6 @@ object frmCadPessoa: TfrmCadPessoa
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnSalvarClick
   end
   object btnEditar: TSpeedButton
     Left = 303
@@ -1515,7 +1511,6 @@ object frmCadPessoa: TfrmCadPessoa
     Width = 100
     Height = 90
     Caption = 'Editar'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -1910,7 +1905,6 @@ object frmCadPessoa: TfrmCadPessoa
       7E5FB9A691DDD3C9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnEditarClick
   end
   object btnExcluir: TSpeedButton
     Left = 409
@@ -1918,7 +1912,6 @@ object frmCadPessoa: TfrmCadPessoa
     Width = 100
     Height = 90
     Caption = 'Excluir'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -2313,7 +2306,6 @@ object frmCadPessoa: TfrmCadPessoa
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnExcluirClick
   end
   object btnPesquisar: TSpeedButton
     Left = 292
@@ -2385,38 +2377,41 @@ object frmCadPessoa: TfrmCadPessoa
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphRight
     ParentFont = False
-    OnClick = btnPesquisarClick
   end
   object edtCodigo: TEdit
     Left = 137
     Top = 114
     Width = 104
     Height = 21
-    Enabled = False
-    TabOrder = 10
+    TabOrder = 0
   end
   object edtNomePessoa: TEdit
     Left = 137
     Top = 162
     Width = 232
     Height = 21
-    CharCase = ecUpperCase
-    TabOrder = 0
+    TabOrder = 1
   end
   object edtIdade: TEdit
     Left = 137
     Top = 210
     Width = 104
     Height = 21
-    TabOrder = 1
+    TabOrder = 2
   end
   object edtEmail: TEdit
     Left = 137
     Top = 257
     Width = 200
     Height = 21
-    CharCase = ecUpperCase
-    TabOrder = 2
+    TabOrder = 3
+  end
+  object edtCpfCnpj: TEdit
+    Left = 137
+    Top = 353
+    Width = 200
+    Height = 21
+    TabOrder = 7
   end
   object panelCabecalho: TPanel
     Left = 0
@@ -2425,12 +2420,11 @@ object frmCadPessoa: TfrmCadPessoa
     Height = 81
     Align = alTop
     Color = cl3DLight
-    Enabled = False
     ParentBackground = False
-    TabOrder = 11
+    TabOrder = 6
     object lblCabecalho: TLabel
-      Left = 125
-      Top = 17
+      Left = 121
+      Top = 13
       Width = 306
       Height = 39
       Caption = 'Cadastro de Pessoa'
@@ -2532,12 +2526,18 @@ object frmCadPessoa: TfrmCadPessoa
       Stretch = True
     end
   end
+  object edtTelefone: TEdit
+    Left = 137
+    Top = 305
+    Width = 160
+    Height = 21
+    TabOrder = 4
+  end
   object cbFuncao: TComboBox
     Left = 433
     Top = 305
     Width = 124
     Height = 21
-    CharCase = ecUpperCase
     TabOrder = 5
   end
   object cbSexo: TComboBox
@@ -2545,53 +2545,30 @@ object frmCadPessoa: TfrmCadPessoa
     Top = 353
     Width = 124
     Height = 21
-    CharCase = ecUpperCase
-    TabOrder = 6
+    TabOrder = 8
     Items.Strings = (
-      'MASCULINO'
-      'FEMININO')
+      'Masculino'
+      'Feminino')
   end
   object edtEndereco: TEdit
     Left = 137
     Top = 401
     Width = 240
     Height = 21
-    CharCase = ecUpperCase
-    TabOrder = 7
+    TabOrder = 9
   end
   object edtBairro: TEdit
     Left = 137
     Top = 451
     Width = 200
     Height = 21
-    CharCase = ecUpperCase
-    TabOrder = 8
+    TabOrder = 10
   end
   object edtNumero: TEdit
     Left = 437
     Top = 451
     Width = 92
     Height = 21
-    TabOrder = 9
-  end
-  object edtTelefone: TMaskEdit
-    Left = 137
-    Top = 305
-    Width = 158
-    Height = 21
-    EditMask = '!\(99\)00000-0000;1;_'
-    MaxLength = 14
-    TabOrder = 3
-    Text = '(  )     -    '
-  end
-  object edtCpfCnpj: TMaskEdit
-    Left = 137
-    Top = 353
-    Width = 199
-    Height = 21
-    EditMask = '000\.000\.000\-00;1'
-    MaxLength = 14
-    TabOrder = 4
-    Text = '   .   .   -  '
+    TabOrder = 11
   end
 end

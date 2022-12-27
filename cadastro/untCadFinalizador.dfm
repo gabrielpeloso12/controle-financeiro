@@ -547,7 +547,6 @@ object frmCadFinalizador: TfrmCadFinalizador
   OldCreateOrder = False
   Position = poScreenCenter
   OnKeyDown = FormKeyDown
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object imgClient: TImage
@@ -958,7 +957,6 @@ object frmCadFinalizador: TfrmCadFinalizador
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnNovoClick
   end
   object btnSalvar: TSpeedButton
     Left = 165
@@ -966,7 +964,6 @@ object frmCadFinalizador: TfrmCadFinalizador
     Width = 100
     Height = 90
     Caption = 'Salvar'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -1361,7 +1358,6 @@ object frmCadFinalizador: TfrmCadFinalizador
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnSalvarClick
   end
   object btnEditar: TSpeedButton
     Left = 271
@@ -1369,7 +1365,6 @@ object frmCadFinalizador: TfrmCadFinalizador
     Width = 100
     Height = 90
     Caption = 'Editar'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -1764,7 +1759,6 @@ object frmCadFinalizador: TfrmCadFinalizador
       7E5FB9A691DDD3C9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnEditarClick
   end
   object btnExcluir: TSpeedButton
     Left = 377
@@ -1772,7 +1766,6 @@ object frmCadFinalizador: TfrmCadFinalizador
     Width = 100
     Height = 90
     Caption = 'Excluir'
-    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -2167,11 +2160,10 @@ object frmCadFinalizador: TfrmCadFinalizador
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphTop
     ParentFont = False
-    OnClick = btnExcluirClick
   end
   object btnPesquisar: TSpeedButton
-    Left = 271
-    Top = 119
+    Left = 272
+    Top = 120
     Width = 115
     Height = 29
     Caption = 'Pesquisar'
@@ -2239,7 +2231,6 @@ object frmCadFinalizador: TfrmCadFinalizador
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     Layout = blGlyphRight
     ParentFont = False
-    OnClick = btnPesquisarClick
   end
   object lblCodigo: TLabel
     Left = 40
@@ -2274,9 +2265,9 @@ object frmCadFinalizador: TfrmCadFinalizador
     Height = 89
     Align = alTop
     Color = cl3DLight
-    Enabled = False
     ParentBackground = False
-    TabOrder = 1
+    TabOrder = 0
+    ExplicitWidth = 573
     object lblCabecalho: TLabel
       Left = 109
       Top = 17
@@ -2397,16 +2388,14 @@ object frmCadFinalizador: TfrmCadFinalizador
     Left = 136
     Top = 173
     Width = 257
-    Height = 21
-    CharCase = ecUpperCase
-    TabOrder = 0
+    Height = 25
+    TabOrder = 1
   end
   object edtCodigo: TEdit
     Left = 136
     Top = 124
     Width = 89
-    Height = 21
-    Enabled = False
+    Height = 25
     TabOrder = 2
   end
 end
